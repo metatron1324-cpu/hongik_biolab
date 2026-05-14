@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hong-ik Biolab — for Neuroscience</title>
+<meta name="description" content="Hong-ik Biolab — a translational neuroscience laboratory at The Catholic University of Korea, led by Jae Sang Oh, M.D., Ph.D." />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --crimson-900: #4A0E0E;
+  --crimson-800: #6B1414;
+  --crimson-700: #8B1A1A;
+  --crimson-600: #B91C1C;
+  --crimson-500: #C72E33;
+  --crimson-400: #DC4448;
+  --crimson-50: #FEF2F2;
+  --paper: #FBF7F6;
+  --paper-soft: #F4ECEA;
+  --ink: #1A0A0A;
+  --ink-2: #3D2424;
+  --ink-3: #6B4A4A;
+  --line: #E8D5D2;
+  --gold: #C9A05C;
+  --white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+img { display: block; max-width: 100%; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+/* navigation */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251, 247, 246, 0.94);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink); }
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  padding: 4px;
+}
+.brand-logo img { width: 100%; height: 100%; object-fit: contain; }
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.1;
+  color: var(--crimson-800);
+}
+.brand-sub {
+  font-size: 10.5px;
+  letter-spacing: 1.4px;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+.nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+.nav-links a {
+  color: var(--ink-2);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14.5px;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--crimson-700); }
+.nav-cta {
+  background: var(--crimson-700);
+  color: var(--white) !important;
+  padding: 9px 20px;
+  border-radius: 24px;
+  font-weight: 600 !important;
+  transition: background .15s;
+}
+.nav-cta:hover { background: var(--crimson-800); }
+.menu-btn { display: none; background: none; border: 0; font-size: 26px; color: var(--ink); cursor: pointer; }
+
+/* hero */
+.hero {
+  position: relative;
+  padding: 100px 0 110px;
+  background: linear-gradient(140deg, #3A0A0A 0%, var(--crimson-900) 35%, var(--crimson-800) 75%, var(--crimson-700) 100%);
+  color: var(--white);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: -220px;
+  right: -180px;
+  background: radial-gradient(circle, rgba(220, 68, 72, .28) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--gold);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before { content: ''; width: 36px; height: 2px; background: var(--gold); }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5.2vw, 64px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+.hero h1 .it { font-style: italic; font-weight: 500; color: var(--gold); }
+.hero p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255,255,255,.86);
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+.hero-meta {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 18px 36px;
+  padding: 22px 26px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  background: rgba(0,0,0,.18);
+  max-width: 580px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.hero-meta dt { color: var(--gold); font-weight: 600; margin-bottom: 3px; font-size: 12px; letter-spacing: .8px; text-transform: uppercase; }
+.hero-meta dd { color: rgba(255,255,255,.92); }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 26px;
+  font-weight: 600;
+  font-size: 14.5px;
+  text-decoration: none;
+  transition: transform .15s, background .15s, color .15s;
+}
+.btn-primary { background: var(--gold); color: var(--crimson-900); }
+.btn-primary:hover { background: #d6b073; transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.45); }
+.btn-outline:hover { background: rgba(255,255,255,.08); border-color: var(--white); }
+.hero-stats { display: flex; flex-direction: column; gap: 18px; }
+.stat-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: 28px 32px;
+  backdrop-filter: blur(8px);
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--gold);
+}
+.stat-num span { color: rgba(255,255,255,.65); font-size: 38px; }
+.stat-lbl { color: rgba(255,255,255,.78); font-size: 12.5px; text-transform: uppercase; letter-spacing: 1.3px; margin-top: 8px; }
+
+/* sections */
+section { padding: 96px 0; }
+.section-head { margin-bottom: 56px; max-width: 760px; }
+.section-eyebrow {
+  color: var(--crimson-700);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.section-eyebrow::before { content: ''; width: 36px; height: 2px; background: var(--crimson-700); }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.section-lede { font-size: 17.5px; color: var(--ink-3); line-height: 1.6; }
+
+/* about */
+.about { background: var(--paper); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.mission-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 40px 44px;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(74, 14, 14, 0.04);
+}
+.mission-card .quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  position: absolute;
+  top: 14px;
+  left: 30px;
+  font-size: 96px;
+  color: var(--crimson-500);
+  opacity: .14;
+  line-height: 1;
+}
+.mission-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  color: var(--crimson-800);
+  font-weight: 600;
+  margin-bottom: 22px;
+  position: relative;
+}
+.mission-card p { font-size: 15.5px; color: var(--ink-2); line-height: 1.75; margin-bottom: 14px; }
+.about-aside ul { list-style: none; display: flex; flex-direction: column; gap: 22px; }
+.about-aside li { padding-left: 24px; border-left: 2px solid var(--crimson-500); }
+.about-aside li h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--crimson-800);
+  margin-bottom: 4px;
+}
+.about-aside li p { color: var(--ink-3); font-size: 14.5px; line-height: 1.55; }
+
+/* research */
+.research { background: var(--paper-soft); }
+.research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.research-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 36px 36px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.research-card:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(74, 14, 14, .09); border-color: var(--crimson-500); }
+.research-card.featured { grid-column: span 2; background: linear-gradient(135deg, var(--white) 0%, #FDF6F5 100%); border-color: var(--crimson-500); }
+.research-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--crimson-600);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.research-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.research-card p { color: var(--ink-2); font-size: 14.5px; line-height: 1.65; margin-bottom: 16px; }
+.research-card p strong { font-weight: 600; color: var(--crimson-800); }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--crimson-700);
+  background: var(--crimson-50);
+  padding: 5px 12px;
+  border-radius: 12px;
+  border: 1px solid #f9d8d8;
+}
+
+/* members */
+.members { background: var(--paper); }
+.member-pi {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 44px;
+  padding: 36px;
+  margin-bottom: 60px;
+  box-shadow: 0 2px 4px rgba(74, 14, 14, .04);
+}
+.pi-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--crimson-50);
+  aspect-ratio: 3/4;
+  position: relative;
+}
+.pi-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pi-photo .badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: var(--crimson-700);
+  color: var(--white);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.pi-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.05;
+}
+.pi-role { color: var(--crimson-700); font-weight: 600; font-size: 15px; margin-bottom: 22px; }
+.pi-info p { color: var(--ink-2); font-size: 15px; line-height: 1.65; margin-bottom: 14px; }
+.pi-info p strong { font-weight: 600; color: var(--ink); }
+.pi-affil {
+  padding-top: 20px;
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--ink-3);
+  line-height: 1.7;
+}
+.pi-affil p { margin-bottom: 8px; }
+.pi-affil strong { color: var(--crimson-700); font-weight: 600; }
+
+.member-group { margin-bottom: 52px; }
+.member-group:last-child { margin-bottom: 0; }
+.group-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--crimson-800);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.group-title .count {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+}
+.member-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.member-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(74,14,14,.07); border-color: var(--crimson-500); }
+.member-photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--crimson-50);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--line);
+}
+.member-photo img { width: 100%; height: 100%; object-fit: cover; }
+.member-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 3px;
+  line-height: 1.15;
+}
+.member-name-kr { color: var(--ink-3); font-size: 12.5px; margin-bottom: 8px; }
+.member-role { color: var(--crimson-700); font-weight: 600; font-size: 12.5px; letter-spacing: .4px; margin-bottom: 12px; }
+.member-desc { color: var(--ink-3); font-size: 13px; line-height: 1.55; }
+
+/* affiliated small cards */
+.affil-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.affil-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--crimson-500);
+  border-radius: 8px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.affil-mono {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--crimson-700);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.affil-card h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+  line-height: 1.15;
+}
+.affil-card p { color: var(--ink-3); font-size: 12.5px; line-height: 1.4; }
+
+/* publications */
+.publications { background: var(--paper-soft); }
+.pub-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 50px;
+}
+.pub-stat-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+}
+.pub-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--crimson-700);
+  line-height: 1;
+}
+.pub-stat-num span { color: var(--ink-3); font-size: 32px; }
+.pub-stat-lbl { color: var(--ink-3); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-top: 10px; }
+.pub-list {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pub-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 28px;
+  padding: 26px 30px;
+  border-bottom: 1px solid var(--line);
+  transition: background .15s;
+}
+.pub-item:last-child { border-bottom: 0; }
+.pub-item:hover { background: var(--crimson-50); }
+.pub-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--crimson-600);
+  font-weight: 500;
+}
+.pub-body h4 { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 6px; line-height: 1.4; }
+.pub-body p { color: var(--ink-3); font-size: 13.5px; line-height: 1.55; }
+.pub-body em { color: var(--crimson-700); font-style: italic; }
+.scholar-link { text-align: center; margin-top: 30px; }
+.scholar-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: 26px;
+  background: var(--crimson-700);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14.5px;
+  transition: background .15s;
+}
+.scholar-link a:hover { background: var(--crimson-800); }
+
+/* news */
+.news { background: var(--paper); }
+.news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 60px; }
+.news-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px 30px;
+  border-left: 3px solid var(--crimson-500);
+}
+.news-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--crimson-700);
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.news-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.news-card p { color: var(--ink-3); font-size: 14px; line-height: 1.6; }
+
+/* gallery (lab life) */
+.gallery-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--crimson-800);
+  margin-bottom: 8px;
+}
+.gallery-sub { color: var(--ink-3); font-size: 14.5px; margin-bottom: 24px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.gallery-item {
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--crimson-50);
+  border: 1px solid var(--line);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* contact */
+.contact { background: linear-gradient(140deg, #3A0A0A 0%, var(--crimson-900) 50%, var(--crimson-800) 100%); color: var(--white); }
+.contact .section-eyebrow { color: var(--gold); }
+.contact .section-eyebrow::before { background: var(--gold); }
+.contact .section-title { color: var(--white); }
+.contact .section-lede { color: rgba(255,255,255,.78); }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+.contact-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 12px;
+  padding: 28px 30px;
+}
+.contact-card h4 {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.contact-card p { color: var(--white); font-size: 14.5px; line-height: 1.65; margin-bottom: 5px; }
+.contact-card a {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,.4);
+  text-underline-offset: 3px;
+}
+.contact-card a:hover { text-decoration-color: var(--gold); }
+.contact-card small { display: block; color: rgba(255,255,255,.55); font-size: 12.5px; margin-top: 10px; }
+
+/* footer */
+.footer { background: #2A0808; color: rgba(255,255,255,.65); padding: 36px 0 30px; font-size: 13.5px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; }
+.footer-brand { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.85); text-decoration: none; }
+.footer-brand img { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,.92); padding: 4px; }
+.footer-brand strong { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--white); }
+
+/* responsive */
+@media (max-width: 980px) {
+  .hero-grid, .about-grid, .research-grid, .news-grid { grid-template-columns: 1fr; gap: 36px; }
+  .research-card.featured { grid-column: auto; }
+  .member-pi { grid-template-columns: 1fr; }
+  .pi-photo { max-width: 280px; }
+  .pub-stats { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .container { padding: 0 22px; }
+  .nav-inner { padding: 0 22px; height: 64px; }
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 36px rgba(0,0,0,.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s;
+  }
+  .nav-links.open { max-height: 460px; }
+  .nav-links li { width: 100%; border-top: 1px solid var(--line); }
+  .nav-links li:first-child { border-top: 0; }
+  .nav-links a { display: block; padding: 16px 22px; width: 100%; }
+  .nav-cta { margin: 14px 22px; text-align: center; }
+  .menu-btn { display: block; }
+  section { padding: 64px 0; }
+  .hero { padding: 70px 0 80px; }
+  .brand-name { font-size: 18px; }
+  .brand-sub { font-size: 9.5px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#home">
+      <div class="brand-logo"><img src="assets/img/logo.png" alt="Hong-ik Biolab logo" /></div>
+      <div>
+        <div class="brand-name">Hong-ik Biolab</div>
+        <div class="brand-sub">for Neuroscience</div>
+      </div>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#members">Members</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HOME / HERO -->
+<header class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Hong-ik Laboratory for Neuroscience</div>
+        <h1>Bridging the <span class="it">clinic</span> and the <span class="it">bench</span> in cerebrovascular neuroscience.</h1>
+        <p>A translational neuroscience lab at The Catholic University of Korea — investigating cerebrovascular disease, vascular cognitive impairment, stroke, and subarachnoid hemorrhage — from patient registries to iPSC-derived models, omics, and regenerative therapy.</p>
+        <dl class="hero-meta">
+          <div><dt>Principal Investigator</dt><dd>Jae Sang Oh, M.D., Ph.D.<br /><span style="opacity:.72; font-size:13px;">Associate Professor</span></dd></div>
+          <div><dt>Department</dt><dd>Neurosurgery &amp; Medical Science<br /><span style="opacity:.72; font-size:13px;">Uijeongbu St. Mary's Hospital</span></dd></div>
+          <div style="grid-column: span 2"><dt>Institution</dt><dd>The Catholic University of Korea</dd></div>
+        </dl>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#research">Explore our research →</a>
+          <a class="btn btn-outline" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-num">47<span>+</span></div>
+          <div class="stat-lbl">Peer-reviewed papers / last 5 years</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">17<span>+</span></div>
+          <div class="stat-lbl">National &amp; international grants</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">300<span>+</span></div>
+          <div class="stat-lbl">Annual cerebrovascular cases</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">About the lab</div>
+      <h2 class="section-title">Where the operating room meets the petri dish.</h2>
+      <p class="section-lede">Hong-ik Biolab is a hybrid clinician-scientist laboratory that integrates the daily realities of stroke care with cutting-edge molecular, cellular, and computational neuroscience.</p>
+    </div>
+    <div class="about-grid">
+      <div class="mission-card">
+        <div class="quote-mark">"</div>
+        <h3>Our mission</h3>
+        <p>We are committed to advancing the understanding and treatment of cerebrovascular and neurodegenerative disease through translational research that begins and ends with the patient.</p>
+        <p>By combining real-world clinical data, iPSC and animal models, multi-omics, and AI-driven analytics, we generate evidence that informs clinical guidelines and seeds next-generation therapeutics.</p>
+      </div>
+      <div class="about-aside">
+        <ul>
+          <li>
+            <h4>Clinician-led, bench-rooted</h4>
+            <p>Every research question begins in the operating room or stroke unit and is taken back to the lab for mechanistic dissection.</p>
+          </li>
+          <li>
+            <h4>Five integrated research streams</h4>
+            <p>Evidence-based medicine, big data, regenerative therapy, metabolic dementia, and CSF omics — designed to inform each other.</p>
+          </li>
+          <li>
+            <h4>International collaboration</h4>
+            <p>Active joint research with Boston Children's Hospital, Harvard Medical School, and Yale School of Medicine.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="research" id="research">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Research streams</div>
+      <h2 class="section-title">Five lines of inquiry, one translational arc.</h2>
+      <p class="section-lede">From population-scale registries to single-cell transcriptomics — our research programs share a common goal: turning vascular and neurological insight into better stroke care.</p>
+    </div>
+    <div class="research-grid">
+      <div class="research-card featured">
+        <div class="research-num">01</div>
+        <h3>Evidence-Based Medicine &amp; Clinical Guidelines</h3>
+        <p>Development of <strong>Korean national clinical practice guidelines</strong> for cerebrovascular disease, and systematic reviews / meta-analyses of key topics such as <strong>RNF213 genetic susceptibility in moyamoya disease</strong> across East Asian and non-Asian populations. We lead efforts on rule-in / rule-out diagnostic criteria stratified by ancestry, and translate findings into society-level guideline revisions.</p>
+        <div class="tags">
+          <span class="tag">Clinical Guidelines</span>
+          <span class="tag">Meta-analysis</span>
+          <span class="tag">Moyamoya / RNF213</span>
+          <span class="tag">KSCVES</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-num">02</div>
+        <h3>Big Data — Nationwide CVD Cohort</h3>
+        <p>Population-scale analyses of the Korean cerebrovascular disease cohort using <strong>HIRA national health insurance data</strong> — covering more than ten years of records. We build prognostic AI models, regional incidence maps, and policy-facing real-world evidence for stroke care.</p>
+        <div class="tags">
+          <span class="tag">HIRA</span>
+          <span class="tag">Real-world evidence</span>
+          <span class="tag">AI / ML</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-num">03</div>
+        <h3>Regenerative — Stem Cell Therapy</h3>
+        <p>Translational research on <strong>serotonergic neuronal cell transplantation</strong> for ischemic stroke recovery. We characterize engraftment and functional improvement in MCAO models using neurological scoring, grip strength, and single-cell transcriptomics of substantia nigra vs. forebrain neurons.</p>
+        <div class="tags">
+          <span class="tag">iPSC</span>
+          <span class="tag">Serotonergic neurons</span>
+          <span class="tag">MCAO</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-num">04</div>
+        <h3>Metabolic Dementia &amp; Vascular Cognitive Impairment</h3>
+        <p>Comprehensive modeling of metabolic and vascular dementia using <strong>BCAS chronic hypoperfusion models</strong>, regional brain organoids, and cognitive / metabolic profiling. We have linked the <strong>Rho/ROCK pathway</strong> to neuroinflammation and white matter injury, and use iPSC-derived organoids to dissect human-specific mechanisms.</p>
+        <div class="tags">
+          <span class="tag">BCAS</span>
+          <span class="tag">Organoid</span>
+          <span class="tag">Rho/ROCK</span>
+          <span class="tag">VCI</span>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-num">05</div>
+        <h3>Omics — CSF Biomarkers in Subarachnoid Hemorrhage</h3>
+        <p>Proteomics and exosome analysis of cerebrospinal fluid in subarachnoid hemorrhage, using nanoparticle tracking analysis, TEM, pathway enrichment, and PPI networks to uncover early bio-diagnostic markers and mechanistic targets.</p>
+        <div class="tags">
+          <span class="tag">Proteomics</span>
+          <span class="tag">CSF exosomes</span>
+          <span class="tag">SAH</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section class="members" id="members">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Lab members</div>
+      <h2 class="section-title">The people behind the science.</h2>
+      <p class="section-lede">A clinician-scientist team spanning neurosurgery, neuroscience, big-data analytics, and stem cell biology — collaborating across the bedside, the bench, and the cohort.</p>
+    </div>
+
+    <!-- PI feature card -->
+    <div class="member-pi">
+      <div class="pi-photo">
+        <img src="assets/img/pi.jpg" alt="Jae Sang Oh, M.D., Ph.D." />
+        <div class="badge">Principal Investigator</div>
+      </div>
+      <div class="pi-info">
+        <h3>Jae Sang Oh, M.D., Ph.D.</h3>
+        <div class="pi-role">Associate Professor · Hybrid Cerebrovascular Neurosurgeon</div>
+        <p>Hybrid open and endovascular neurosurgeon and Director of the Stroke Center at Uijeongbu St. Mary's Hospital. M.D./Ph.D. in medical big data from Soonchunhyang University. Clinical practice covers more than <strong>300 cerebrovascular cases per year</strong> — including aneurysm clipping and coiling, mechanical thrombectomy, radiosurgery, bypass, and carotid endarterectomy — with a parallel research portfolio in cerebrovascular disease, vascular dementia, big-data analytics in stroke, and regenerative therapy.</p>
+        <p>Currently a <strong>visiting researcher in the Vascular Biology Program at Boston Children's Hospital, Harvard Medical School</strong>, working with the Lee Lab on the endothelial biology of RNF213 in moyamoya disease.</p>
+        <div class="pi-affil">
+          <p><strong>Affiliations.</strong> Department of Neurosurgery &amp; Medical Science, Uijeongbu St. Mary's Hospital · College of Medicine, The Catholic University of Korea · Vascular Biology Program, Boston Children's Hospital, Harvard Medical School (visiting, 2026).</p>
+          <p><strong>Roles.</strong> Director, Stroke Center · Director, Clinical Practice Guidelines, KSCVES · Director, IT &amp; Informatics, Basic Research Council, KNS · Secretary General, Korean Cerebrovascular Surgery Society.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Senior researchers -->
+    <div class="member-group">
+      <h3 class="group-title">Senior Researchers <span class="count">Research Professor · Scientist · Manager</span></h3>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-photo"><img src="assets/img/shin.jpg" alt="Moon-Kyung Shin" /></div>
+          <h4>Moon-Kyung Shin, Ph.D.</h4>
+          <div class="member-name-kr">신문경</div>
+          <div class="member-role">Research Professor</div>
+          <p class="member-desc">Big data analysis of cardio-cerebrovascular disease · Nationwide cohort studies using HIRA national health insurance data · Real-world evidence and AI-driven prognostic modeling.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-photo"><img src="assets/img/jo.jpg" alt="Yuna Jo, M.D." /></div>
+          <h4>Yuna Jo, M.D.</h4>
+          <div class="member-name-kr">조유나</div>
+          <div class="member-role">Research Scientist</div>
+          <p class="member-desc">Evidence-based medicine and clinical guideline development · RNF213 meta-analysis in moyamoya disease across East Asian and non-Asian populations.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-photo"><img src="assets/img/yang.jpg" alt="Hyo Soon Yang, Ph.D." /></div>
+          <h4>Hyo Soon Yang, Ph.D.</h4>
+          <div class="member-name-kr">양효순</div>
+          <div class="member-role">Ph.D. · Lab Manager</div>
+          <p class="member-desc">Lab management and project coordination · Clinical trial operations and data governance · Multi-site research administration and regulatory compliance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graduate students -->
+    <div class="member-group">
+      <h3 class="group-title">Graduate Students <span class="count">Ph.D. · M.S.</span></h3>
+      <div class="member-grid">
+        <div class="member-card">
+          <div class="member-photo"><img src="assets/img/lee.jpg" alt="Eun Chae Lee" /></div>
+          <h4>Eun Chae Lee</h4>
+          <div class="member-name-kr">이은채</div>
+          <div class="member-role">Ph.D. Student</div>
+          <p class="member-desc">Metabolic dementia and vascular cognitive impairment · Brain organoid modeling · BCAS chronic hypoperfusion models · CSF exosomes in subarachnoid hemorrhage.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-photo"><img src="assets/img/kim_h.jpg" alt="Hongsik Kim" /></div>
+          <h4>Hongsik Kim</h4>
+          <div class="member-name-kr">김홍식</div>
+          <div class="member-role">Ph.D. Student</div>
+          <p class="member-desc">Endothelial motility and RNF213 biology · iPSC-derived 2D / 3D vascular models · Mechanistic dissection of moyamoya disease.</p>
+        </div>
+        <div class="member-card">
+          <div class="member-photo"><img src="assets/img/cha.jpg" alt="Jeong-Ho Cha" /></div>
+          <h4>Jeong-Ho Cha</h4>
+          <div class="member-name-kr">차정호</div>
+          <div class="member-role">M.S. Student</div>
+          <p class="member-desc">Serotonergic neuronal cell transplantation for ischemic stroke recovery · MCAO animal models · Single-cell transcriptomics of substantia nigra vs. forebrain neurons.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Affiliated researchers -->
+    <div class="member-group">
+      <h3 class="group-title">Affiliated Researchers <span class="count">Clinical Trials &amp; Data</span></h3>
+      <div class="affil-grid">
+        <div class="affil-card">
+          <div class="affil-mono">TK</div>
+          <div>
+            <h5>Tae Yong Kim</h5>
+            <p>김태용 · Data engineering &amp; clinical informatics</p>
+          </div>
+        </div>
+        <div class="affil-card">
+          <div class="affil-mono">JM</div>
+          <div>
+            <h5>Jung Ki Moon</h5>
+            <p>문정기 · Patient registries &amp; trial coordination</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab alumni -->
+    <div class="member-group">
+      <h3 class="group-title">Lab Alumni <span class="count">Graduated Members</span></h3>
+      <div class="affil-grid">
+        <div class="affil-card">
+          <div class="affil-mono">DH</div>
+          <div>
+            <h5>Dong-Yong Hong</h5>
+            <p>홍동용 · Class of 2022</p>
+          </div>
+        </div>
+        <div class="affil-card">
+          <div class="affil-mono">SP</div>
+          <div>
+            <h5>Sang-Won Park</h5>
+            <p>박상원 · Class of 2023</p>
+          </div>
+        </div>
+        <div class="affil-card">
+          <div class="affil-mono">DL</div>
+          <div>
+            <h5>Dong-Hoon Lee</h5>
+            <p>이동훈 · Class of 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="publications" id="publications">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Publications &amp; awards</div>
+      <h2 class="section-title">Selected research output.</h2>
+      <p class="section-lede">A snapshot of recent peer-reviewed work, ongoing manuscripts, and academic recognition. Full publication list is available via Google Scholar.</p>
+    </div>
+
+    <div class="pub-stats">
+      <div class="pub-stat-card">
+        <div class="pub-stat-num">47<span>+</span></div>
+        <div class="pub-stat-lbl">Peer-reviewed / Last 5 years</div>
+      </div>
+      <div class="pub-stat-card">
+        <div class="pub-stat-num">17<span>+</span></div>
+        <div class="pub-stat-lbl">National &amp; International Grants</div>
+      </div>
+      <div class="pub-stat-card">
+        <div class="pub-stat-num">15<span>+</span></div>
+        <div class="pub-stat-lbl">National Research Projects since 2015</div>
+      </div>
+      <div class="pub-stat-card">
+        <div class="pub-stat-num">4</div>
+        <div class="pub-stat-lbl">Major Academic Awards</div>
+      </div>
+    </div>
+
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-year">2024</div>
+        <div class="pub-body">
+          <h4>Nam-cheon Best Paper Award — Korean Society of Cerebrovascular &amp; Endovascular Surgery</h4>
+          <p>Recognition for outstanding contribution to cerebrovascular research <em>(KSCVES)</em>.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div class="pub-body">
+          <h4>Grand Academic Award — Korean Neurosurgical Society</h4>
+          <p>For sustained academic achievement in neurovascular research <em>(KNS)</em>.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">2022</div>
+        <div class="pub-body">
+          <h4>Outstanding Researcher — M.D.–Scientist Program</h4>
+          <p>Korean National Research Foundation physician-scientist training program.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">2021</div>
+        <div class="pub-body">
+          <h4>Best Paper Award — HIRA Big Data Symposium</h4>
+          <p>Nationwide cardio-cerebrovascular disease analysis using national health insurance data.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">Ongoing</div>
+        <div class="pub-body">
+          <h4>Meta-analysis of RNF213 (p.R4810K) in moyamoya disease</h4>
+          <p>24 primary studies · 4,410 cases · 10,311 controls — sensitivity / specificity stratified by East Asian, Korean, Chinese, and non-Asian populations <em>(Yuna Jo, M.D.; Hong-ik Biolab, in revision)</em>.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">Ongoing</div>
+        <div class="pub-body">
+          <h4>StrokAI — Real-time prognosis prediction in stroke</h4>
+          <p>Clinical trial platform for real-time outcome prediction and time-to-treatment impact visualization <em>(with KoNES, J.H. Lee &amp; Prof. Ko)</em>.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">Ongoing</div>
+        <div class="pub-body">
+          <h4>Serotonergic neuronal transplantation enhances post-MCAO recovery</h4>
+          <p>Functional and transcriptomic characterization of substantia nigra vs. forebrain serotonergic neurons in ischemic stroke recovery <em>(Jeong-Ho Cha, M.S.; Hong-ik Biolab)</em>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scholar-link">
+      <a href="https://scholar.google.co.kr/citations?hl=ko&user=DfxSijcAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">View full publication list on Google Scholar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">News &amp; updates</div>
+      <h2 class="section-title">Recent milestones.</h2>
+      <p class="section-lede">Lab moves, collaborations, and academic achievements from the past two years.</p>
+    </div>
+
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-date">January 2026</div>
+        <h4>Visiting researcher at Boston Children's Hospital</h4>
+        <p>Dr. Oh joins Prof. Kwonmoo Lee's group in the Vascular Biology Program at Boston Children's Hospital, Harvard Medical School, to study endothelial mechanisms of RNF213 in moyamoya disease.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2025</div>
+        <h4>Yale Genetics visiting research</h4>
+        <p>Visiting researcher at Yale School of Medicine focused on the genetic and molecular underpinnings of cerebrovascular disease.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2024</div>
+        <h4>Nam-cheon Best Paper Award, KSCVES</h4>
+        <p>Awarded for outstanding peer-reviewed contribution to cerebrovascular and endovascular surgery research.</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2023</div>
+        <h4>Grand Academic Award, Korean Neurosurgical Society</h4>
+        <p>Recognition of sustained translational research output from the Hong-ik Biolab team.</p>
+      </div>
+    </div>
+
+    <h3 class="gallery-title">Lab life</h3>
+    <p class="gallery-sub">Group meetings, seminars, and team gatherings — the human side of the science.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/img/lab1.jpg" alt="Lab meeting" /></div>
+      <div class="gallery-item"><img src="assets/img/lab3.jpg" alt="Group seminar" /></div>
+      <div class="gallery-item"><img src="assets/img/lab4.jpg" alt="Team gathering" /></div>
+      <div class="gallery-item"><img src="assets/img/lab2.jpg" alt="Lab moment" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Get in touch</div>
+      <h2 class="section-title">Let's collaborate.</h2>
+      <p class="section-lede">We welcome inquiries from researchers, clinicians, and students interested in cerebrovascular disease, vascular dementia, regenerative therapy, and big-data approaches to stroke care.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4>Find us</h4>
+        <p>Department of Neurosurgery</p>
+        <p>&amp; Medical Science</p>
+        <p>Uijeongbu St. Mary's Hospital</p>
+        <p>College of Medicine</p>
+        <p style="margin-top:8px;">The Catholic University of Korea</p>
+        <p>Seoul, Republic of Korea</p>
+      </div>
+      <div class="contact-card">
+        <h4>Email</h4>
+        <p><a href="mailto:cmc22300592@catholic.ac.kr">cmc22300592@catholic.ac.kr</a></p>
+        <p><a href="mailto:metatron1324@gmail.com">metatron1324@gmail.com</a></p>
+        <small>For research collaboration and inquiries</small>
+      </div>
+      <div class="contact-card">
+        <h4>Currently visiting</h4>
+        <p>Vascular Biology Program</p>
+        <p>Boston Children's Hospital</p>
+        <p>Harvard Medical School</p>
+        <small>Joint research with Prof. Kwonmoo Lee's Lab — 2026</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a class="footer-brand" href="#home">
+        <img src="assets/img/logo.png" alt="Hong-ik Biolab logo" />
+        <div>
+          <strong>Hong-ik Biolab</strong><br />
+          <span style="font-size:11.5px; letter-spacing:1.3px; text-transform:uppercase; color:rgba(255,255,255,.55);">for Neuroscience</span>
+        </div>
+      </a>
+      <div style="text-align:right;">
+        <div>© 2026 Hong-ik Biolab · The Catholic University of Korea</div>
+        <div style="opacity:.7; margin-top:4px;">Jae Sang Oh, M.D., Ph.D. — Principal Investigator</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => links.classList.remove('open'));
+    });
+  }
+</script>
+</body>
+</html>
